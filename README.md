@@ -9,7 +9,7 @@ README Cheat sheet: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheats
 Access Realtime Transit Feed --> Vehicle Positions API. <br>
 Optional: General Transit Feed
 
-## Notes:
+## General Notes:
 1. Do not touch the Certs Folder!
 2. requests.php contains the API Call function which we need to use to get road info from akl transport.
 3. if unable to connect to akl transport database, can dload akl_transport.sql from Learn http://learn.canterbury.ac.nz/mod/assign/view.php?id=629224 and import it to mysql workbench.
