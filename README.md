@@ -4,7 +4,7 @@ This is for INFO 263 2017 Assignment.
 GMap API Documentation: https://developers.google.com/maps/documentation/javascript/adding-a-google-map
 
 ## At the Akl Transport Website:
-Access Realtime Transit Feed --> Vehicle Positions API
+Access Realtime Transit Feed --> Vehicle Positions API. <br>
 Optional: General Transit Feed
 
 ## Notes:
