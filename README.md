@@ -1,14 +1,20 @@
 # INFO263-Dev-Team-B
 This is for INFO 263 2017 Assignment.
 
+GMap API Documentation: https://developers.google.com/maps/documentation/javascript/adding-a-google-map
 
-Ariel's API Key for Akl Transport:
+## At the Akl Transport Website:
+Access Realtime Transit Feed --> Vehicle Positions API
+Optional: General Transit Feed
+
+## Notes:
+1. Do not touch the Certs Folder!
+2. requests.php contains the API Call function which we need to use to get road info from akl transport.
+3. if unable to connect to akl transport database, can dload akl_transport.sql from Learn http://learn.canterbury.ac.nz/mod/assign/view.php?id=629224 and import it to mysql workbench.
+
+
+## Ariel's API Key for Akl Transport:
 8c20ae415fb2473f80e96a47c013b94a
 
-Aaron's API Key for GMaps API:
+## Aaron's API Key for GMaps API:
 AIzaSyDWVvlBxK3Hm7BqW97c4cXFKY5wTcpG2vc
-
-Access Realtime Transit Feed --> Vehicle Positions API
-
-Optional: General Transit Feed
-https://developers.google.com/maps/documentation/javascript/adding-a-google-map
