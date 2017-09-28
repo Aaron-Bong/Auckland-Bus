@@ -39,6 +39,7 @@ function apiCall($APIKey, $url, $queryParams)
                     $queryParamString = "$query=$value,";
                 }
                 $queryParamString .= $value . ",";
+                
             }
 
             // Add the last uri to batch
