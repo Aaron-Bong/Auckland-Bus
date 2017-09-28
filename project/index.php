@@ -32,33 +32,16 @@ require_once 'include/header.php';
 				console.log("do nothing"); //change laterrrrrrrrrrrrrrrrrrrrrrrr
 			}
 			else {
-				$.ajax({ //////help! not working!!!!!!!
-                    type: "POST",
-                    url: 'index.php',
-                    data: { route : choosen_route }
+				$.ajax({
+                    type: "GET",
+                    url: 'route_request.php',
+                    data: { choosen_route : choosen_route }
                 });
 			}
 		});
 	});
 </script>
 <!--===END of Drop down list===-->
-
-<?php
-//$uid = $_POST['route'];
-//echo "<p> haaaaaaaaaaaaaaaaaaa '{$uid}' </p>";
-if(isset($_POST['route']))
-{
-    $uid = $_POST['route'];
-    echo "<p> haaaaaaaaaaaaaaaaaaa '{$uid}' </p>";
-    // Do whatever you want with the $uid
-}
-?>
-
-<!--================================insert code here=========================-->
-
-
-
-<!--===============================================-->
 
 <div id="map"></div>
 
