@@ -33,3 +33,6 @@ AIzaSyDWVvlBxK3Hm7BqW97c4cXFKY5wTcpG2vc
 https://jsfiddle.net/svigna/VzYF6/ <br>
 http://jsfiddle.net/fn55p/5/ <br>
 https://developers.google.com/maps/documentation/javascript/infowindows <br>
+
+## GMAP Resize:
+https://stackoverflow.com/questions/19304574/center-set-zoom-of-map-to-cover-all-visible-markers <br>
