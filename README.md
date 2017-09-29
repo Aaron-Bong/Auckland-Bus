@@ -27,3 +27,9 @@ Optional: General Transit Feed
 
 ## Aaron's API Key for GMaps API:
 AIzaSyDWVvlBxK3Hm7BqW97c4cXFKY5wTcpG2vc
+
+
+## GMAP Tool tip:
+https://jsfiddle.net/svigna/VzYF6/
+http://jsfiddle.net/fn55p/5/
+https://developers.google.com/maps/documentation/javascript/infowindows
