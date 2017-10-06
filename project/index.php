@@ -48,11 +48,17 @@ require_once 'include/header.php';
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWVvlBxK3Hm7BqW97c4cXFKY5wTcpG2vc&callback=initMap">
 </script>
-<script src="scripts/map.js"></script>
+<script src="scripts/map_test.js"></script>
 <script>
     $(document).ready(function() {
-
-    });
+    	setInterval(function() {
+    	cache_clear()
+  	}, 50000)
+	});
+	function cache_clear() {
+  		window.location.reload(true);
+ 	 	// window.location.reload(); use this if you do not remove cache
+	}
 </script>
 <?php
 require_once 'include/footer.php';
