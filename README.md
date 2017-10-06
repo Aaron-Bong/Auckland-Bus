@@ -36,3 +36,7 @@ https://developers.google.com/maps/documentation/javascript/infowindows <br>
 
 ## GMAP Resize:
 https://stackoverflow.com/questions/19304574/center-set-zoom-of-map-to-cover-all-visible-markers <br>
+
+## eg code on modularising map.js:
+
+https://stackoverflow.com/questions/33907300/cant-get-fitbounds-to-work <br>
