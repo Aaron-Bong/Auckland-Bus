@@ -48,7 +48,7 @@ require_once 'include/header.php';
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWVvlBxK3Hm7BqW97c4cXFKY5wTcpG2vc&callback=initMap">
 </script>
-<script src="scripts/map_test.js"></script>
+<script src="scripts/map.js"></script>
 <script>
     $(document).ready(function() {
     	setInterval(function() {
