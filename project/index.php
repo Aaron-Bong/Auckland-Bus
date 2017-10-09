@@ -24,6 +24,9 @@ require_once 'include/header.php';
 	 ?>
 </select>
 
+//Replace this script with a code that gets the value of choosen_route and stores it in a php variable
+//After that we call the php function that gets the trip_ipds out of the database
+//and then makes an apiCall with the trip_id array
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#dropDown").change(function(){
@@ -41,14 +44,20 @@ require_once 'include/header.php';
 		});
 	});
 </script>
+//END OF SCRIPT TO BE REPLACED
 <!--===END of Drop down list===-->
 
+
+//Modify the map.js file to make it accept an array of vehicle locations and puts a marker on it.
 <div id="map"></div>
 
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWVvlBxK3Hm7BqW97c4cXFKY5wTcpG2vc&callback=initMap">
 </script>
+
 <script src="scripts/map.js"></script>
+
+
 <script>
     $(document).ready(function() {
     	setInterval(function() {
