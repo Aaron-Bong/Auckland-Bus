@@ -40,3 +40,12 @@ https://stackoverflow.com/questions/19304574/center-set-zoom-of-map-to-cover-all
 ## eg code on modularising map.js:
 
 https://stackoverflow.com/questions/33907300/cant-get-fitbounds-to-work <br>
+
+## GOAL NOW (by Ariel):
+# (This is to avoid passing data around)
+
+1. include_once the request.php to the index.php
+2. include_once the apiCall function to index.php
+3. call the function that places markers on map.js from the index
+4. modify the function from map.js to take an array of vehicle positions
+
