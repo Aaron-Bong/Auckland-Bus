@@ -42,7 +42,7 @@ https://stackoverflow.com/questions/19304574/center-set-zoom-of-map-to-cover-all
 https://stackoverflow.com/questions/33907300/cant-get-fitbounds-to-work <br>
 
 ## GOAL NOW (by Ariel):
-# (This is to avoid passing data around)
+### (This is to avoid passing data around)
 
 1. include_once the request.php to the index.php
 2. include_once the apiCall function to index.php
