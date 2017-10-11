@@ -38,17 +38,11 @@ if(isset($_GET['choosen_route']))
 	// Tell the browser we are sending back json
 	header('Content-Type: application/json');
 	//print_r($trip_ids);
-	
-	//echo var_dump($results);
-	
+		
 	echo json_encode($results);
-	//$result->close();
-	//$conn->close();
+	$result->close();
+	$conn->close();
 }
 ?>
-
-
-
-
 
 
