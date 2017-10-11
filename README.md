@@ -49,3 +49,5 @@ https://stackoverflow.com/questions/33907300/cant-get-fitbounds-to-work <br>
 3. call the function that places markers on map.js from the index
 4. modify the function from map.js to take an array of vehicle positions
 
+## CSS for GMAP tooltip
+https://codepen.io/Marnoto/pen/xboPmG
