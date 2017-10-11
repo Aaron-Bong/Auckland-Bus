@@ -36,15 +36,19 @@ if(isset($_GET['choosen_route']))
 	
 	$results = apiCall($APIKey, $url, $params);
 	// Tell the browser we are sending back json
-	//header('Content-Type: application/json');
+	header('Content-Type: application/json');
 	//print_r($trip_ids);
 	
 	//echo var_dump($results);
 	
+	echo json_encode($results);
 	//$result->close();
 	//$conn->close();
 }
 ?>
 
-<script type="text/javascript">var jArray =<?php echo json_encode($results); ?>;</script>
-<script type="text/javascript" src="test.js"></script>
+
+
+
+
+

@@ -1,11 +1,19 @@
-﻿var locations = [
- 	['uluru', -25.363, 131.044],
-    ['pos1', -20.363, 120.044],
-    ['pos2', -23.363, 110.044],
-    ['pos3', -29.363, 156.044],
-    ['fuckthisshit', -30.363, 146.044],
-    ['fuck', -35.363, 157.044]
-    ];
+﻿    
+var locations = []
+for (var i = 0; i < jArray.length; i++){
+	var data = JSON.parse(jArray[i]);
+
+	if (JSON.stringify(data["response"]).length > 2 ){
+		for (var j = 0; j < data["response"]["entity"].length; j++) {
+			var position = [JSON.stringify(data["response"]["entity"][j]["vehicle"]["vehicle"]["id"]),
+							JSON.stringify(data["response"]["entity"][j]["vehicle"]["position"]["latitude"]),
+							JSON.stringify(data["response"]["entity"][j]["vehicle"]["position"]["longitude"])];
+			positions.push(position);
+			document.write(position);
+			document.write('<br>');
+		}
+	}	
+}
  
 function initMap() {
     var marker, i;
@@ -31,3 +39,5 @@ function initMap() {
       	})(marker, i));
     }	
 }
+
+

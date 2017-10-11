@@ -1,6 +1,7 @@
 <?php
 $active = "home";
 require_once 'include/header.php';
+require_once 'get_trips.php';
 ?>
 
 <!--Drop down list-->
@@ -24,10 +25,10 @@ require_once 'include/header.php';
 	 ?>
 </select>
 
-//Replace this script with a code that gets the value of choosen_route and stores it in a php variable
-//After that we call the php function that gets the trip_ipds out of the database
-//and then makes an apiCall with the trip_id array
+<script src="test_request.js"></script>
+
 <script type="text/javascript">
+	console.log("hasdsds");
 	$(document).ready(function(){
 		$("#dropDown").change(function(){
 			var choosen_route = $(this).val();
@@ -35,20 +36,26 @@ require_once 'include/header.php';
 				console.log("do nothing"); //change laterrrrrrrrrrrrrrrrrrrrrrrr
 			}
 			else {
+				$.get( "test_request.php", { choosen_route: choosen_route }, function( vehicle_positions_raw ) {
+	  				//console.log(vehicle_positions_raw);
+	  				var vehicle_positions = json_extractor(vehicle_positions_raw);
+	  				//console.log( vehicle_positions );
+					setMarkers(vehicle_positions)
+				});
+				//console.log( vehicle_positions );
+				/*
 				$.ajax({
                     type: "GET",
                     url: 'route_request.php',
                     data: { choosen_route : choosen_route }
                 });
+            */
 			}
 		});
 	});
 </script>
-//END OF SCRIPT TO BE REPLACED
 <!--===END of Drop down list===-->
 
-
-//Modify the map.js file to make it accept an array of vehicle locations and puts a marker on it.
 <div id="map"></div>
 
 <script async defer

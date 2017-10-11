@@ -1,21 +1,27 @@
+
+/*
 var locations = [
-	['uluru', -25.363, 131.044],
-    ['pos1', -20.363, 120.044],
-    ['pos2', -23.363, 110.044],
-    ['pos3', -29.363, 156.044],
-    ['fuckthisshit', -30.363, 146.044],
-    ['fuck', -35.363, 157.044]
-    ];
+ ['uluru', -25.363, 131.044],
+ ['pos1', -20.363, 120.044],
+ ['pos2', -23.363, 110.044],
+ ['pos3', -29.363, 156.044],
+ ['fuckthisshit', -30.363, 146.044],
+ ['fuck', -35.363, 157.044]
+];*/
+var map;
 
-function initMap() {
-
-    var marker, i;
-    	
-	var map = new google.maps.Map(document.getElementById('map'), {
-    	zoom: 3,
-    	center: new google.maps.LatLng(locations[0][1], locations[0][2]),
+function initMap() 
+{
+	map = new google.maps.Map(document.getElementById('map'), {
+    	zoom: 12,
+    	center: {lat: -36.8802, lng: 174.7616}, //coordinates for  Auckland
+    	scaleControl: true
     });
-      
+}
+
+//generate markers with each marher having a tooltip to display extra info
+function setMarkers(locations) {    
+	var marker, i;  
     var infowindow = new google.maps.InfoWindow();  
     //generate pointers for all busses based on bus's position
    	for (i = 0; i < locations.length; i++) {
@@ -32,7 +38,8 @@ function initMap() {
 		})(marker, i));
 		autoResize(map, locations);
 	}
-}	      
+}
+	      
        	    	
     	// GMap auto resizeto include all markers
     	//var markers = [marker0, marker1, marker2, marker3];//some array
