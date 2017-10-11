@@ -9,7 +9,7 @@ var locations = [
  ['fuck', -35.363, 157.044]
 ];*/
 var map;
-
+var markers = [];
 function initMap() 
 {
 	map = new google.maps.Map(document.getElementById('map'), {
@@ -20,7 +20,14 @@ function initMap()
 }
 
 //generate markers with each marher having a tooltip to display extra info
-function setMarkers(locations) {    
+function setMarkers(locations) {   
+	if (markers.length != 0){
+		for (i = 0; i < markers.length; i++){
+			markers[i].setMap(null);
+		}
+		markers = []
+	}
+	
 	var marker, i;  
     var infowindow = new google.maps.InfoWindow();  
     //generate pointers for all busses based on bus's position
@@ -32,11 +39,12 @@ function setMarkers(locations) {
     	// Opens up an infowindow (Tooltip) when a marker is clicked
       	google.maps.event.addListener(marker, 'click', (function(marker, i) {
         	return function() {
-          		infowindow.setContent(locations[i][0]);
+          		infowindow.setContent("Vehicle ID: "+locations[i][0] + "<br/>Start time: "+ locations[i][3]);
           		infowindow.open(map, marker);
         	}
 		})(marker, i));
 		autoResize(map, locations);
+		markers.push(marker);
 	}
 }
 	      

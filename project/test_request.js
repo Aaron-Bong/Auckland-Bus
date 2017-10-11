@@ -7,7 +7,8 @@
 			for (var j = 0; j < data["response"]["entity"].length; j++) {
 				var position = [data["response"]["entity"][j]["vehicle"]["vehicle"]["id"],
 								parseFloat(JSON.stringify(data["response"]["entity"][j]["vehicle"]["position"]["latitude"])),
-								parseFloat(JSON.stringify(data["response"]["entity"][j]["vehicle"]["position"]["longitude"]))];
+								parseFloat(JSON.stringify(data["response"]["entity"][j]["vehicle"]["position"]["longitude"])),
+								data["response"]["entity"][j]["vehicle"]["trip"]["start_time"]];
 				positions.push(position);
 				//document.write(position);
 				//document.write('<br>');

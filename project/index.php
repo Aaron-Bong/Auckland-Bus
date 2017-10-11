@@ -28,10 +28,11 @@ require_once 'get_trips.php';
 <script src="test_request.js"></script>
 
 <script type="text/javascript">
+	var choosen_route;
 	console.log("hasdsds");
 	$(document).ready(function(){
 		$("#dropDown").change(function(){
-			var choosen_route = $(this).val();
+			choosen_route = $(this).val();
 			if (choosen_route === "NULL") {
 				console.log("do nothing"); //change laterrrrrrrrrrrrrrrrrrrrrrrr
 			}
@@ -66,16 +67,23 @@ require_once 'get_trips.php';
 
 
 <script>
-    $(document).ready(function() {
-    	setInterval(function() {
-    	cache_clear()
-  	}, 50000)
+$(document).ready(function() {
+	setInterval(function() {
+	update_map()
+}, 30000)
+});
+
+function update_map() {
+	console.log(choosen_route);
+	$.get( "test_request.php", { choosen_route: choosen_route }, function( vehicle_positions_raw ) {
+		//console.log(vehicle_positions_raw);
+		var vehicle_positions = json_extractor(vehicle_positions_raw);
+		console.log( vehicle_positions );
+		setMarkers(vehicle_positions)
 	});
-	function cache_clear() {
-  		window.location.reload(true);
- 	 	// window.location.reload(); use this if you do not remove cache
-	}
+}
 </script>
+
 <?php
 require_once 'include/footer.php';
 ?>
