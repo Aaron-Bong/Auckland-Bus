@@ -4,6 +4,7 @@
 }
 body {
   /* Margin bottom by footer height */
+  background-color: #FFFFCC;
   margin-bottom: 60px;
 }
 
@@ -30,4 +31,38 @@ body > .container {
 #map {
 	height: 400px;
 	width: 100%;
+	border-style: double;
+	border-color:aqua;
+	border-width: 5px;
 }
+
+select#dropDown {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+p#vehicle-msg {
+margin-top:15px;
+margin-bottom: 15px;
+text-align:center;
+color:fuchsia;
+font-weight: bold;
+}
+
+p#footer-msg {
+	margin-bottom: 0px;
+	text-align:center;
+	color:purple;
+	font-weight: bold;
+}
+
+div.toolTip strong {
+	color:aqua;
+	font-weight: bold;
+	font-size:medium;
+}
+
+div.toolTip {
+	color: purple;
+	font-size:medium;
+}
+

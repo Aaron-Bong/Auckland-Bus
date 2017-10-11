@@ -1,6 +1,7 @@
             </div><!-- /.container -->
 
         <footer class="footer">
+        <p id="footer-msg">Proudly Created By: Aaron, Arial, David and Jin</p>
           <div class="container">
           </div>
         </footer>

@@ -1,14 +1,15 @@
 <?php
 $active = "home";
 require_once 'include/header.php';
-require_once 'get_trips.php';
+//require_once 'get_trips.php';
 ?>
 
 <!--Drop down list-->
-<select id ="dropDown" style="margin-bottom: 20px;">
+<select id ="dropDown">
 	<option value= 'NULL' > Select Route </option>
+	
 	<?php // query.php
-		require_once 'include/config.php';
+		require_once 'include/config.php'; //details to connect to akl database
 		$conn = new mysqli($hostname, $username, $password, $database);
 		
 		if ($conn->connect_error) die($conn->connect_error);
@@ -23,7 +24,6 @@ require_once 'get_trips.php';
 			$res = $result->fetch_assoc()['route_short_name'];
 			echo "<option value= '$res' > $res </option>";
 		}
-		
 		$result->close();
 		$conn->close();
 	 ?>
@@ -32,31 +32,26 @@ require_once 'get_trips.php';
 
 
 <!--===DROP DOWN SELECTION EVENT===-->
-<script src="test_request.js"></script>
+<script src="test_request.js"></script> <!--file that contains the function json_extractor()-->
 
 <script type="text/javascript">
 	var last_route_selected;
 	$(document).ready(function(){
 		$("#dropDown").change(function(){
 			var choosen_route = $(this).val();
-			if (choosen_route === "NULL") {
-				console.log("NO ROUTE SELECTED"); //change laterrrrrrrrrrrrrrrrrrrrrrrr
-			}
-			else {
+			
+			if (choosen_route !== null && choosen_route !== "NULL") {
 				last_route_selected = choosen_route
 				$.get( "test_request.php", { choosen_route: choosen_route }, function( vehicle_positions_raw ) {
-	  				//console.log(vehicle_positions_raw);
 	  				var vehicle_positions = json_extractor(vehicle_positions_raw);
-	  				//console.log( vehicle_positions );
-	  				//console.log(vehicle_positions.length);
 					setMarkers(vehicle_positions)
-					if (vehicle_positions.length == 0) {
-	  					document.getElementById("vehicle").innerHTML = "NO VEHICLES FOUND :(";
+					
+					if (vehicle_positions.length == 0) { //if there are no vehicle positions returned
+	  					document.getElementById("vehicle-msg").innerHTML = "NO VEHICLES FOUND <i class=\"icon-frown icon-2x\" aria-hidden=\"true\"></i>";
 	  					initMap();
 	  				} else {
-	  					document.getElementById("vehicle").innerHTML = "";
+	  					document.getElementById("vehicle-msg").innerHTML = "";
 					}
-
 				});
 			}
 		});
@@ -78,7 +73,7 @@ require_once 'get_trips.php';
 
 
 <!--VEHICLE PARAGRAPH-->
-<p id="vehicle"></p>
+<p id="vehicle-msg"></p>
 <!--END OF VEHICLE PARAGRAPH-->
 
 
@@ -87,25 +82,22 @@ require_once 'get_trips.php';
 $(document).ready(function() {
 	setInterval(function() {
 	update_map()
-}, 30000)
+}, 30000) //updates evey 30 seconds
 });
 
 
 function update_map() {
 	choosen_route = last_route_selected;
-	//console.log(choosen_route);
-	if (choosen_route != null && choosen_route != "NULL") {
+	if (choosen_route !== null && choosen_route !== "NULL") {
 		$.get( "test_request.php", { choosen_route: choosen_route }, function( vehicle_positions_raw ) {
-			//console.log(vehicle_positions_raw);
 			var vehicle_positions = json_extractor(vehicle_positions_raw);
-			//console.log( vehicle_positions );
-			//console.log(vehicle_positions.length);
 			setMarkers(vehicle_positions)
-			if (vehicle_positions.length == 0) {
-	  			document.getElementById("vehicle").innerHTML = "NO VEHICLES FOUND :(";
+			
+			if (vehicle_positions.length == 0) { //if there are no vehicle positions returned
+	  			document.getElementById("vehicle-msg").innerHTML = "NO VEHICLES FOUND <i class=\"icon-frown icon-2x\" aria-hidden=\"true\"></i>";
 	  			initMap();
 	  		} else {
-	  			document.getElementById("vehicle").innerHTML = "";
+	  			document.getElementById("vehicle-msg").innerHTML = "";
 			}
 		});
 	}

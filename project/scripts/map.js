@@ -39,7 +39,7 @@ function setMarkers(locations) {
     	// Opens up an infowindow (Tooltip) when a marker is clicked
       	google.maps.event.addListener(marker, 'click', (function(marker, i) {
         	return function() {
-          		infowindow.setContent("Vehicle ID: "+locations[i][0] + "<br/>Start time: "+ locations[i][3]);
+          		infowindow.setContent("<div class=" + "toolTip" + "><strong>Vehicle ID: </strong>"+ locations[i][0] + "<br/><strong>Start time: </strong>" + locations[i][3] + "</div>");
           		infowindow.open(map, marker);
         	}
 		})(marker, i));
