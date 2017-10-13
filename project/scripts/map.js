@@ -1,16 +1,9 @@
-
-/*
-var locations = [
- ['uluru', -25.363, 131.044],
- ['pos1', -20.363, 120.044],
- ['pos2', -23.363, 110.044],
- ['pos3', -29.363, 156.044],
- ['fuckthisshit', -30.363, 146.044],
- ['fuck', -35.363, 157.044]
-];*/
+//Initialize global variables to be accessed around the domain
 var map;
 var markers = [];
-function initMap() 
+
+function initMap()
+//Set Google Map centered at Auckland
 {
 	map = new google.maps.Map(document.getElementById('map'), {
     	zoom: 12,
@@ -19,8 +12,12 @@ function initMap()
     });
 }
 
-//generate markers with each marher having a tooltip to display extra info
-function setMarkers(locations) {   
+
+
+function setMarkers(locations)
+//Generate markers with each marker having a tooltip to display extra info
+{
+	//remove all markers before placing new ones
 	if (markers.length != 0){
 		for (i = 0; i < markers.length; i++){
 			markers[i].setMap(null);
@@ -30,7 +27,7 @@ function setMarkers(locations) {
 	
 	var marker, i;  
     var infowindow = new google.maps.InfoWindow();  
-    //generate pointers for all busses based on bus's position
+    //Generate pointers for all busses based on bus's position
    	for (i = 0; i < locations.length; i++) {
    		marker = new google.maps.Marker({
         	position: new google.maps.LatLng(locations[i][1], locations[i][2]),
@@ -39,7 +36,12 @@ function setMarkers(locations) {
     	// Opens up an infowindow (Tooltip) when a marker is clicked
       	google.maps.event.addListener(marker, 'click', (function(marker, i) {
         	return function() {
-          		infowindow.setContent("<div class=" + "toolTip" + "><strong>Vehicle ID: </strong>"+ locations[i][0] + "<br/><strong>Start time: </strong>" + locations[i][3] + "</div>");
+          		infowindow.setContent("<div class="
+          		+ "toolTip"
+          		+ "><strong>Vehicle ID: </strong>"+ locations[i][0]
+          		+ "<br/><strong>Start time: </strong>"
+          		+ locations[i][3] + "<br/><strong>Time Stamp: </strong>"
+          		+ locations[i][4].slice(0,24) +"</div>");
           		infowindow.open(map, marker);
         	}
 		})(marker, i));
@@ -48,10 +50,9 @@ function setMarkers(locations) {
 	}
 }
 	      
-       	    	
-    	// GMap auto resizeto include all markers
-    	//var markers = [marker0, marker1, marker2, marker3];//some array
-function autoResize(map, locations){
+function autoResize(map, locations)
+// GMap auto resize to include all markers
+{
 	var bounds = new google.maps.LatLngBounds();
 	for (var i = 0; i < locations.length; i++) {
 		bounds.extend(new google.maps.LatLng(locations[i][1], locations[i][2]));

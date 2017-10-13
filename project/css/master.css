@@ -4,7 +4,7 @@
 }
 body {
   /* Margin bottom by footer height */
-  background-color: #FFFFCC;
+  background-color: #DCDCDC;
   margin-bottom: 60px;
 }
 
@@ -15,7 +15,7 @@ body {
   /* Set the fixed height of the footer here */
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
-  background-color: #f5f5f5;
+  background-color: black;
 }
 
 
@@ -32,7 +32,7 @@ body > .container {
 	height: 400px;
 	width: 100%;
 	border-style: double;
-	border-color:aqua;
+	border-color: purple;
 	border-width: 5px;
 }
 
@@ -44,19 +44,18 @@ p#vehicle-msg {
 margin-top:15px;
 margin-bottom: 15px;
 text-align:center;
-color:fuchsia;
 font-weight: bold;
+color:red;
 }
 
 p#footer-msg {
 	margin-bottom: 0px;
 	text-align:center;
-	color:purple;
+	color:white;
 	font-weight: bold;
 }
 
 div.toolTip strong {
-	color:aqua;
 	font-weight: bold;
 	font-size:medium;
 }
