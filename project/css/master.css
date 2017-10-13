@@ -29,7 +29,7 @@ body > .container {
 }
 
 #map {
-	height: 600px;
+	height: 400px;
 	width: 100%;
 	border-style: double;
 	border-color: purple;
