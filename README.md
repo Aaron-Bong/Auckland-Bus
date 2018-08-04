@@ -1,5 +1,5 @@
 # INFO263-Dev-Team-B
-This is for INFO 263 2017 Assignment.
+We are a team of 4 who made a website for users to view the position of Auckland Public busses in real-time. This project is part of our INFO 263 2017 Assignment.
 
 GMap API Documentation: https://developers.google.com/maps/documentation/javascript/adding-a-google-map
 
